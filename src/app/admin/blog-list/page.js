@@ -6,14 +6,13 @@ import { toast } from "react-toastify";
 
 export default function page() {
   const [blogs, setBlogs] = useState([]);
+
   const fetchBlogs = async () => {
     const response = await axios.get("/api/blogs");
     setBlogs(response.data.data);
   };
 
   const deleteBlog = async (mongoId) => {
-    console.log("clicked delete blogfn");
-
     const response = await axios.delete("/api/blogs", {
       params: { id: mongoId },
     });

@@ -1,12 +1,9 @@
 import { assets } from "@/assets/assets";
-import axios from "axios";
 import Image from "next/image";
 import React from "react";
-import { toast } from "react-toastify";
 
 export default function BlogTableItem({ blog, deleteBlog }) {
   const BlogDate = new Date(blog.date);
-  console.log(blog);
 
   return (
     <tr className="bg-white border-b">
